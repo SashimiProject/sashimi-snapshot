@@ -1,0 +1,14 @@
+{
+  "sashimi": {
+    "key": "sashimi",
+    "symbol": "SASHIMICHAKRA",
+    "name": "Sashimi",
+    "defaultView": "all",
+    "address": "0x42bF80A92734de221889049e91187a07464607B1",
+    "token": "0x42bF80A92734de221889049e91187a07464607B1",
+    "core": [],
+    "min": 0,
+    "invalid": [],
+    "visible": true
+  }
+}
