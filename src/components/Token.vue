@@ -1,6 +1,6 @@
 <template>
   <img
-    src="https://aelf.io/gridcn/sashimi200x200.jpg"
+    src="https://aelf.io/gridcn/sashimi-white.jpg"
     class="d-inline-block bg-gray-9 v-align-middle line-height-0 circle border"
     :style="{
       width: `${size || 22}px`,
