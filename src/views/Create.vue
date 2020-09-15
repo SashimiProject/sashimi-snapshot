@@ -68,14 +68,14 @@
               class="width-full mb-2"
             >
               <span v-if="!form.start">Select start date</span>
-              <span v-else v-text="$d(form.start * 1e3, 'long')" />
+              <span v-else v-text="_formatDate(form.start)" />
             </UiButton>
             <UiButton
               @click="[(modalOpen = true), (selectedDate = 'end')]"
               class="width-full mb-2"
             >
               <span v-if="!form.end">Select end date</span>
-              <span v-else v-text="$d(form.end * 1e3, 'long')" />
+              <span v-else v-text="_formatDate(form.end)" />
             </UiButton>
             <UiButton class="width-full mb-2">
               <input
@@ -117,6 +117,8 @@ export default {
     draggable
   },
   data() {
+    const now = new Date().valueOf() / 1000;
+    const end = now + 3 * 24 * 60 * 60;
     return {
       key: this.$route.params.key,
       loading: false,
@@ -125,8 +127,8 @@ export default {
         name: '',
         body: '',
         choices: [],
-        start: '',
-        end: '',
+        start: now,
+        end,
         snapshot: ''
       },
       modalOpen: false,
@@ -141,8 +143,6 @@ export default {
         : { token: this.key, verified: [] };
     },
     isValid() {
-      // const ts = (Date.now() / 1e3).toFixed();
-
       return (
         !this.loading &&
         this.web3.account &&
@@ -158,6 +158,7 @@ export default {
     }
   },
   mounted() {
+    this.form.snapshot = this.web3.blockNumber + 20000;
     this.addChoice(2);
   },
   methods: {

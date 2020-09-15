@@ -2,7 +2,7 @@ import config from '@/helpers/config';
 import pkg from '@/../package.json';
 
 export function shorten(str = '') {
-  return `${str.slice(0, 6)}...${str.slice(str.length - 4)}`;
+  return `${(str || '').slice(0, 6)}...${str.slice(str.length - 4)}`;
 }
 
 export function jsonParse(input, fallback?) {
