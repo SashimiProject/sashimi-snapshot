@@ -60,7 +60,6 @@ export default {
       const [year, month, day] = this.input.split('-');
       let input = new Date(year, month - 1, day, this.form.h, this.form.m, 0);
       input = input.getTime() / (1e3).toFixed();
-      console.log('input', input);
       this.$emit('input', input);
       this.$emit('close');
     }
