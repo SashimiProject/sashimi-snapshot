@@ -2,7 +2,7 @@
   <UiModal :open="open" @close="$emit('close')">
     <form @submit.prevent="handleSubmit" class="modal-body">
       <div v-if="step === 0">
-        <h3 class="m-4 text-center">Select {{ selectedDate }} date UTC</h3>
+        <h3 class="m-4 text-center">Select {{ selectedDate }} date</h3>
         <div class="modal-body m-4">
           <UiCalendar v-model="input" class="mx-auto mb-2" />
         </div>
@@ -58,8 +58,8 @@ export default {
     handleSubmit() {
       if (this.step === 0) return (this.step = 1);
       const [year, month, day] = this.input.split('-');
-      let input = Date.UTC(year, month - 1, day, this.form.h, this.form.m, 0);
-      input = new Date(input).getTime() / (1e3).toFixed();
+      let input = new Date(year, month - 1, day, this.form.h, this.form.m, 0);
+      input = input.getTime() / (1e3).toFixed();
       this.$emit('input', input);
       this.$emit('close');
     }

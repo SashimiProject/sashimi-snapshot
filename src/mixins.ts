@@ -37,6 +37,20 @@ export default {
     },
     _etherscanLink(str: string, type: string): string {
       return etherscanLink(str, type);
+    },
+    _padLeft(str, base = 10, chr = '0'){
+      const len = (String(base || 10).length - String(str).length) + 1;
+      return len > 0 ? `${new Array(len).join(chr || '0')}${str}` : str;
+    },
+    _formatDate(timestamp) {
+      const date = new Date(timestamp * 1000);
+      return `${[
+        this._padLeft(date.getFullYear()),
+        this._padLeft(date.getMonth() + 1),
+        this._padLeft(date.getDate())].join('/')} ${[
+        this._padLeft(date.getHours()),
+        this._padLeft(date.getMinutes())
+      ].join(':')}`;
     }
   }
 };
