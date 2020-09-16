@@ -8,7 +8,7 @@
         </div>
       </div>
       <div v-else>
-        <h3 class="m-4 mb-0 text-center">Select {{ selectedDate }} time UTC</h3>
+        <h3 class="m-4 mb-0 text-center">Select {{ selectedDate }} time</h3>
         <div class="d-flex m-4 mx-auto" style="max-width: 160px;">
           <UiButton class="px-0 width-fit">
             <input v-model="form.h" max="24" class="input text-center col-5" />
