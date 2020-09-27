@@ -6,9 +6,14 @@
     "defaultView": "all",
     "address": "0x42bF80A92734de221889049e91187a07464607B1",
     "token": "0x42bF80A92734de221889049e91187a07464607B1",
-    "core": [],
+    "core": [
+      "0x9f36266D39b092b902E415423C033e91ACaBC726"
+    ],
     "min": 0,
-    "invalid": [],
+    "invalid": [
+      "QmURYg627JUczG5d7ifpFnMTcJ9YZiWLVTw6xdYR1WcouJ",
+      "QmS8so9pzHnhFeALHNdVm8t47RvEdPNe4uKSon8RNDakvb"
+    ],
     "visible": true
   }
 }
